@@ -4,18 +4,29 @@ const qna=document.querySelector("#qna");
 
 function addAnswer(answerText,qIdx){
 	var a= document.querySelector('.answerBox');
-	var answer=document.createElement('button'); //answer변수에 버튼생성
-	answer.classList.add('answerList');
+	var answer=document.createElement('button'); //answer변수에 버튼생성-answerList라는 클래스
+	answer.classList.add('answerList'); 
+	answer.classList.add('my-3'); 
+	answer.classList.add('py-3');
+	answer.classList.add('mx-auto');
+	answer.classList.add('fadeIn');
+	
 	a.appendChild(answer);//answer버튼이 a에게 소속될수있게 해줌
 	answer.innerHTML=answerText;
 	
-	answer,addEventListener("click",function(){
+	answer.addEventListener("click",function(){
 		var children =document.querySelectorAll('.answerList');
 		for(let i =0; i<children.length; i++){
 			children[i].disabled=true; //비활성화
+			children[i].style.WebkitAnimation = "fadeOut 0.5s";
+			children[i].style.animation = "fadeOut 0.5s";
+		}
+		setTimeout(()=>{
+			for(let i =0; i<children.length; i++){
 			children[i].style.display='none'; //사라짐
 		}
 		goNext(++qIdx);
+		},450)	
 	}, false);
 }
 function goNext(qIdx){
