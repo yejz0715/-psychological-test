@@ -1,7 +1,7 @@
 //상수선언
 const main=document.querySelector("#main");
 const qna=document.querySelector("#qna");
-
+const endPoint=12;
 function addAnswer(answerText,qIdx){
 	var a= document.querySelector('.answerBox');
 	var answer=document.createElement('button'); //answer변수에 버튼생성-answerList라는 클래스
@@ -35,6 +35,8 @@ function goNext(qIdx){
 	for(let i in qnaList[qIdx].a){
 		addAnswer(qnaList[qIdx].a[i].answer,qIdx);
 	}
+	var status=document.querySelector('.statusBar');
+	status.style.width=(100/endPoint) * (qIdx+1) + '%';
 }
 function begin(){
 	main.style.WebkitAnimation = "fadeOut 1s";
