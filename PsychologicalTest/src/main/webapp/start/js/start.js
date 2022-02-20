@@ -2,7 +2,7 @@
 const main=document.querySelector("#main");
 const qna=document.querySelector("#qna");
 const result=document.querySelector("#result");
-const endPoint=12;
+const endPoint=12; //마지막 질문
 const select=[]; //사용자가 선택한 버튼이 어떠한 선택지였는지 알수있는 배열
 
 function calResult(){ //select배열로 결과를 연산해주는 함수
@@ -39,7 +39,7 @@ var resultArray=pointArray.sort(function(a,b){ //pointArray 정렬
 	}
 	return 0;	
 	});
-	let resultword=resultArray[0].key;
+	let resultword=resultArray[0].key; 
 	return resultword;
 }
 function goResult(){ //함수가 시작할때는 qna세션을 끝내고 result세션을 열어줘야함
