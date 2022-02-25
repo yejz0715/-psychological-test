@@ -20,9 +20,9 @@ function calResult(){ //select배열로 결과를 연산해주는 함수
 		{name:'dog', value:0, key:10},
 		{name:'pig', value:0, key:11},
 	]
-	for(let i=0; i<endPoint; 1++ ){
+	for(let i=0; i<endPoint; i++ ){
 		var target=qnaList[i].a[select[i]]; //qnaList의 i번째의 답변a의 i번째가 select배열에 담김
-		for(let j=0; j<target.length; j++){
+		for(let j=0; j<target.type.length; j++){
 			for(let k=0; k<pointArray.length; k++){
 				if(target.type[j] === pointArray[k].name){ //target의 type j번째가 pointArray k번째의 이름이 같다면
 				pointArray[k].value +=1; //k의 value값 1씩 증가
@@ -30,16 +30,17 @@ function calResult(){ //select배열로 결과를 연산해주는 함수
 		}
 	}
 }
-var resultArray=pointArray.sort(function(a,b){ //pointArray 정렬
+var resultArray=pointArray.sort(function(a,b){ //pointArray 정렬(value(기준)가 젤 높은것이 첫번째인덱스에 나올수있게)
 	if(a.value>b.value){
-		return -1;
+		return -1; //a,b정렬
 	}
 	if(a.value<b.value){
-		return 1;
+		return 1; //b,a정렬
 	}
-	return 0;	
+	return 0;	//a,b 순서변경x
 	});
-	let resultword=resultArray[0].key; 
+	console.log(resultArray);
+	let resultword=resultArray[0].key; //value기준으로 정렬된 1번째의 키값
 	return resultword;
 }
 function goResult(){ //함수가 시작할때는 qna세션을 끝내고 result세션을 열어줘야함
@@ -52,7 +53,7 @@ function goResult(){ //함수가 시작할때는 qna세션을 끝내고 result�
 		qna.style.display="none";	
 		result.style.display="block";	
 	}, 450)} ) 
-	console.log(select);
+	calResult();
 }
 
 function addAnswer(answerText,qIdx, idx){
@@ -84,7 +85,7 @@ function addAnswer(answerText,qIdx, idx){
 	}, false);
 }
 function goNext(qIdx){
-	if(qIdx+1 == endPoint){ //질문이 끝나면 goResult()함수로..
+	if(qIdx === endPoint){ //질문이 끝나면 goResult()함수로..
 		goResult();
 		return; 
 	}
