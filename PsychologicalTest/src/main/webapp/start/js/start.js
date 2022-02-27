@@ -6,7 +6,7 @@ const endPoint=12; //마지막 질문
 const select=[0,0,0,0,0,0,0,0,0,0,0,0]; 
 //원소를 12개 갖고있는 배열 선언 /사용자가 선택한 버튼이 어떠한 선택지였는지 알수있는 배열
 
-function calResult(){ //select배열로 결과를 연산해주는 함수
+//function calResult(){ //select배열로 결과를 연산해주는 함수
 	/*var pointArray=[
 		{name:'mouse', value:0, key:0}, //결과에 대한 12개의 배열
 		{name:'cow', value:0, key:1},
@@ -45,25 +45,25 @@ var resultArray=pointArray.sort(function(a,b){ //pointArray 정렬(value(기준)
 	return resultword;
 }
 */
-
+function calResult(){ 
+console.log(select);
 var result=select.indexOf(Math.max(...select)) //select의 배열에 index반환(최대값)
 return result;
 }
 function setResult(){
-  let point = calResult();
+  let point = calResult();//point변수에 calResult의 결과값을 담아준다
   const resultName = document.querySelector('.resultname');
-  resultName.innerHTML = infoList[point].name;
+  resultName.innerHTML = infoList[point].name;//data.js에 inforlist변수[선택한]의 name
 
-  var resultImg = document.createElement('img');
+  var resultImg = document.createElement('img');//createElement로 이미지태그 생성
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = 'img/image-' + point + '.png';
+  var imgURL = 'start/img/image-' + point + '.png';
   resultImg.src = imgURL;
   resultImg.alt = point;
   resultImg.classList.add('img-fluid');
-  imgDiv.appendChild(resultImg);
-
-  const resultDesc = document.querySelector('.resultDesc');
-  resultDesc.innerHTML = infoList[point].desc;
+  imgDiv.appendChild(resultImg);//resultImg를 연결시켜줌
+  const resultDesc = document.querySelector('.resultDesc'); //설명
+  resultDesc.innerHTML = infoList[point].desc; 
 }
 
 function goResult(){ //함수가 시작할때는 qna세션을 끝내고 result세션을 열어줘야함
@@ -76,13 +76,13 @@ function goResult(){ //함수가 시작할때는 qna세션을 끝내고 result�
 		qna.style.display="none";	
 		result.style.display="block";	
 	}, 450)} ) 
-	calResult();
+	setResult();
 }
 
 function addAnswer(answerText,qIdx, idx){
 	var a= document.querySelector('.answerBox');
 	var answer=document.createElement('button'); //answer변수에 버튼생성-answerList라는 클래스
-	answer.classList.add('answerList'); 
+	answer.classList.add('answerList');  //classList:지정한 클래스 값을 추가
 	answer.classList.add('my-3'); 
 	answer.classList.add('py-3');
 	answer.classList.add('mx-auto');
