@@ -59,7 +59,7 @@ function setResult(){
   const imgDiv = document.querySelector('#resultImg');
   var imgURL = 'start/img/image-' + point + '.png';
   resultImg.src = imgURL;
-  resultImg.alt = point;
+  resultImg.alt = point;//point값을 찾아서 result.html에 연결해주기위해서  
   resultImg.classList.add('img-fluid');
   imgDiv.appendChild(resultImg);//resultImg를 연결시켜줌
   const resultDesc = document.querySelector('.resultDesc'); //설명
