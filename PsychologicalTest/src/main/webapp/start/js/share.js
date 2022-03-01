@@ -6,7 +6,7 @@ function setShare(){
 		var resultAlt=resultImg.firstElementChild.alt;
 		const shareTitle='십이간지 연애유형 결과';
 		const shareDes=infoList[resultAlt].name;
-		const shareImage= url + 'start/img/image- ' + resultAlt + '.png';
+		const shareImage= url + 'start/img/image-' + resultAlt + '.png';
 		const shareURL= url + 'start/page/result-' + resultAlt + '.html';
 	
 	Kakao.Link.sendDefault({
