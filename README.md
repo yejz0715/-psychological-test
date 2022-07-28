@@ -7,7 +7,7 @@
 
 <h3>사용 기술</h3>
 
-* html, javaScript, css
+* html, javascript, css
 
 <h3>기능 및 역할</h3>
 
@@ -29,7 +29,7 @@
 
 <h3>라이선스</h3>
 
-* [인프런_판다코딩_나만의 심리테스트 사이트 만들기](https://www.inflearn.com/course/%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%9C%EC%9E%91) 강의를 들으면서 프로젝트를 완성했습니다.
+* [인프런_판다코딩_나만의 심리테스트 사이트 만들기](https://www.inflearn.com/course/%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%9C%EC%9E%91) 강의를 수강하며 프로젝트를 완성했습니다.
 
 <br/>
 <br/>
